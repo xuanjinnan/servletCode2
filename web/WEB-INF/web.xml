@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+		  http://java.sun.com/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+    <servlet>
+        <servlet-name>ErrorHandler</servlet-name>
+        <servlet-class>stu7ExceptionHandler.ErrorHandler</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ErrorHandler</servlet-name>
+        <url-pattern>/ErrorHandler</url-pattern>
+    </servlet-mapping>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/ErrorHandler</location>
+    </error-page>
+    <error-page>
+        <exception-type>java.lang.Throwable</exception-type>
+        <location>/ErrorHandler</location>
+
+    </error-page>
+    <servlet>
+        <servlet-name>SessionTrack</servlet-name>
+        <servlet-class>stu9ServletTracking.SessionTrack</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SessionTrack</servlet-name>
+        <url-pattern>/TomcatTest/SessionTrack</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>15</session-timeout>
+    </session-config>
+</web-app>

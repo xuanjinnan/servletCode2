@@ -1,0 +1,8 @@
+1.
+    Filter 可以同时注册在 web.xml 也可以使用注解注册，并且 web.xml 中的优先权优于注解
+    同样的情况servlet就不行，不能同时注册在 web.xml 和注解上
+
+2.
+    Filter如果有多个，并且都是用注解时，执行的先后顺序是安装定义 Filter 类名的字符比较顺序
+    如 LogFilter 和 AuthenFilter 采用注解定义 Filter，先执行的是 AuthenFilter ，再执行 LogFilter
+    想颠倒顺序可以重命名为：Filter01_LogFilter、Filter02_AuthenFilter
